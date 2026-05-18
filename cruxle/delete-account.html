@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Delete Account — Cruxle</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background: #f9f9fb;
+      color: #1a1a2e;
+      line-height: 1.7;
+      padding: 40px 20px 80px;
+    }
+    .container { max-width: 760px; margin: 0 auto; }
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 40px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid #e0e0ec;
+    }
+    .logo {
+      background: #6C63FF;
+      color: #fff;
+      font-size: 20px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      padding: 8px 14px;
+      border-radius: 10px;
+    }
+    .header-text h1 { font-size: 22px; font-weight: 800; color: #1a1a2e; }
+    .header-text p  { font-size: 13px; color: #666; margin-top: 2px; }
+    h2 {
+      font-size: 17px;
+      font-weight: 700;
+      color: #1a1a2e;
+      margin: 32px 0 10px;
+    }
+    p  { margin-bottom: 12px; font-size: 15px; color: #333; }
+    a  { color: #6C63FF; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .steps {
+      background: #fff;
+      border: 1px solid #e0e0ec;
+      border-radius: 14px;
+      overflow: hidden;
+      margin: 16px 0 24px;
+    }
+    .step {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 16px 20px;
+      border-bottom: 1px solid #f0f0f8;
+    }
+    .step:last-child { border-bottom: none; }
+    .step-num {
+      min-width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #6C63FF;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+    }
+    .step-text { font-size: 15px; color: #333; line-height: 1.6; }
+    .step-text strong { color: #1a1a2e; }
+
+    .warning-box {
+      background: #fff8f0;
+      border: 1px solid #f5c28a;
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 8px 0 24px;
+      font-size: 14px;
+      color: #7a4a10;
+    }
+
+    .email-box {
+      background: #f4f3ff;
+      border: 1px solid #c9c5ff;
+      border-radius: 12px;
+      padding: 20px;
+      margin-top: 12px;
+    }
+    .email-box p { margin-bottom: 8px; }
+    .email-link {
+      display: inline-block;
+      background: #6C63FF;
+      color: #fff;
+      font-weight: 700;
+      font-size: 14px;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      margin-top: 4px;
+    }
+    .email-link:hover { background: #5a52e0; text-decoration: none; }
+
+    .footer {
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid #e0e0ec;
+      font-size: 13px;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="logo">CRUXLE</div>
+      <div class="header-text">
+        <h1>Delete Your Account</h1>
+        <p>Permanently remove your account and all associated data</p>
+      </div>
+    </div>
+
+    <p>You can delete your Cruxle account at any time directly from within the app. Deleting your account is permanent and cannot be undone.</p>
+
+    <h2>Delete from the App</h2>
+    <p>Follow these steps inside the Cruxle app:</p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-text">Open the Cruxle app and go to the <strong>Profile</strong> tab.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-text">Tap <strong>Settings</strong>.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-text">Scroll to the bottom and tap <strong>Delete Account</strong>.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-text">Confirm the deletion when prompted. Your account will be permanently removed.</div>
+      </div>
+    </div>
+
+    <div class="warning-box">
+      Deleting your account will permanently remove your profile, game history, streak, group memberships, and all personal data. This action cannot be reversed. In-app purchases (such as Remove Ads) are tied to your store account and are not refunded upon deletion.
+    </div>
+
+    <h2>What Gets Deleted</h2>
+    <p>When you delete your account, the following data is permanently removed within 30 days:</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num" style="background:#e0e0ec;color:#555;">✓</div>
+        <div class="step-text">Your profile — display name, username, and email</div>
+      </div>
+      <div class="step">
+        <div class="step-num" style="background:#e0e0ec;color:#555;">✓</div>
+        <div class="step-text">All game history, scores, and streaks</div>
+      </div>
+      <div class="step">
+        <div class="step-num" style="background:#e0e0ec;color:#555;">✓</div>
+        <div class="step-text">Group memberships and leaderboard data</div>
+      </div>
+      <div class="step">
+        <div class="step-num" style="background:#e0e0ec;color:#555;">✓</div>
+        <div class="step-text">Hint balance and notification preferences</div>
+      </div>
+    </div>
+
+    <h2>Can't Access the App?</h2>
+    <p>If you are unable to log in or access the app to delete your account, contact us by email and we will delete your account and data manually within 30 days.</p>
+
+    <div class="email-box">
+      <p><strong>Email us your request:</strong></p>
+      <p>Include the email address associated with your Cruxle account in your message.</p>
+      <a class="email-link" href="mailto:jedidevguy@gmail.com?subject=Cruxle%20Account%20Deletion%20Request">
+        Email Deletion Request
+      </a>
+    </div>
+
+    <div class="footer">
+      &copy; 2026 Cruxle. All rights reserved. &nbsp;|&nbsp;
+      <a href="privacy.html">Privacy Policy</a> &nbsp;|&nbsp;
+      <a href="terms.html">Terms of Service</a>
+    </div>
+  </div>
+</body>
+</html>
