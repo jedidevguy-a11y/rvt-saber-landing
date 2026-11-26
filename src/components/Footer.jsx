@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 const YEAR = new Date().getFullYear();
 
 export default function Footer() {
@@ -27,9 +29,9 @@ export default function Footer() {
             </div>
             <div className="flex flex-col gap-2">
               <p className="text-xs font-semibold uppercase tracking-widest text-slate-600">Legal</p>
-              {/* These point to in-app routes; link to app deep links or hosted HTML as needed */}
-              <a href="/privacy"  className="hover:text-cyan transition-colors">Privacy Policy</a>
-              <a href="/terms"    className="hover:text-cyan transition-colors">Terms of Service</a>
+              <Link to="/privacy"     className="hover:text-cyan transition-colors">Privacy Policy</Link>
+              <Link to="/terms"       className="hover:text-cyan transition-colors">Terms of Service</Link>
+              <Link to="/delete-data" className="hover:text-cyan transition-colors">Data Deletion</Link>
             </div>
             <div className="flex flex-col gap-2">
               <p className="text-xs font-semibold uppercase tracking-widest text-slate-600">Contact</p>
