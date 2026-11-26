@@ -48,6 +48,11 @@ export default function Hero() {
           on iOS and Android.
         </p>
 
+        {/* Plan summary */}
+        <p className="mb-8 text-sm font-semibold text-slate-300">
+          Free to start <span className="text-slate-600">·</span> Pro $9.99/mo <span className="text-slate-600">·</span> Expert $19.99/mo
+        </p>
+
         {/* Store badges (not yet live) */}
         <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
           <div

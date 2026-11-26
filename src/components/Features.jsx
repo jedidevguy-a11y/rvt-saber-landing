@@ -60,6 +60,28 @@ export default function Features() {
           </div>
         ))}
       </div>
+
+      {/* Plan summary */}
+      <div className="mt-16 grid gap-4 sm:grid-cols-3">
+        <div className="rounded-2xl border border-border bg-card/60 p-6">
+          <p className="mb-1 text-sm font-bold text-white">Free</p>
+          <p className="text-sm leading-relaxed text-slate-400">
+            20 AI turns a month on the standard model, with threading, history, and the full discipline library.
+          </p>
+        </div>
+        <div className="rounded-2xl border border-cyan/60 bg-card p-6 shadow-[0_0_40px_#00EEFF18]">
+          <p className="mb-1 text-sm font-bold text-white">Pro · $9.99/mo</p>
+          <p className="text-sm leading-relaxed text-slate-400">
+            Unlimited turns, smart AI routing with Claude Sonnet for complex questions, and smart scripting and API help.
+          </p>
+        </div>
+        <div className="rounded-2xl border border-border bg-card/60 p-6">
+          <p className="mb-1 text-sm font-bold text-white">Expert · $19.99/mo</p>
+          <p className="text-sm leading-relaxed text-slate-400">
+            The advanced model on every question, full scripting and API help, and a 2M token monthly cap.
+          </p>
+        </div>
+      </div>
     </section>
   );
 }
