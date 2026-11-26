@@ -89,11 +89,11 @@ export default function Pricing() {
         </div>
 
         {/* Cards */}
-        <div className="grid gap-6 lg:grid-cols-3">
+        <div className="flex flex-col items-stretch gap-6 lg:flex-row">
           {PLANS.map(plan => (
             <div
               key={plan.name}
-              className={`relative flex flex-col rounded-2xl border p-8 ${
+              className={`relative flex flex-1 flex-col rounded-2xl border p-8 ${
                 plan.highlighted
                   ? 'border-cyan/60 bg-card shadow-[0_0_40px_#00EEFF18]'
                   : 'border-border bg-card/60'
