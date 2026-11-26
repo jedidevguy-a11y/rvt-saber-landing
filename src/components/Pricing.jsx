@@ -1,14 +1,10 @@
-const APP_STORE_URL  = 'https://apps.apple.com/app/rvt-saber/id000000000';
-const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=com.rvtsaber';
-
 const PLANS = [
   {
     name: 'Free',
     price: '$0',
     period: 'forever',
     description: 'Perfect for occasional questions and exploring the learning content.',
-    cta: 'Get Started Free',
-    ctaHref: APP_STORE_URL,
+    cta: 'Launching soon',
     highlighted: false,
     features: [
       '20 AI questions per month',
@@ -29,8 +25,7 @@ const PLANS = [
     price: '$9.99',
     period: 'per month',
     description: 'For professionals who rely on fast, accurate answers every single day.',
-    cta: 'Start Pro — $9.99/mo',
-    ctaHref: APP_STORE_URL,
+    cta: 'Launching soon',
     highlighted: true,
     badge: 'Most Popular',
     features: [
@@ -105,37 +100,23 @@ export default function Pricing() {
                 ))}
               </ul>
 
-              <a
-                href={plan.ctaHref}
-                className={`block rounded-xl py-3.5 text-center text-sm font-bold transition-opacity hover:opacity-85 ${
+              <div
+                aria-disabled="true"
+                className={`block rounded-xl py-3.5 text-center text-sm font-bold opacity-60 ${
                   plan.highlighted
                     ? 'bg-cyan text-black'
-                    : 'border border-border text-white hover:border-cyan/40'
+                    : 'border border-border text-white'
                 }`}
               >
                 {plan.cta}
-              </a>
+              </div>
             </div>
           ))}
         </div>
 
-        {/* Platform badges */}
-        <div className="mt-10 flex flex-col items-center gap-3 text-center sm:flex-row sm:justify-center">
-          <p className="text-sm text-slate-500">Available on</p>
-          <div className="flex gap-3">
-            <a
-              href={APP_STORE_URL}
-              className="rounded-lg border border-border bg-card px-4 py-1.5 text-xs font-semibold text-slate-300 transition-colors hover:border-cyan/40"
-            >
-               iOS (App Store)
-            </a>
-            <a
-              href={PLAY_STORE_URL}
-              className="rounded-lg border border-border bg-card px-4 py-1.5 text-xs font-semibold text-slate-300 transition-colors hover:border-cyan/40"
-            >
-              ▶ Android (Google Play)
-            </a>
-          </div>
+        {/* Platform status (apps not yet live) */}
+        <div className="mt-10 text-center text-sm text-slate-500">
+          <span>Launching soon on iOS and Android</span>
         </div>
       </div>
     </section>

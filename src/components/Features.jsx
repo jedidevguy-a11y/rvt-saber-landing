@@ -1,8 +1,8 @@
 const FEATURES = [
   {
     icon: '🤖',
-    title: 'AI Trained on BIM',
-    body: 'Not a generic chatbot. RVT Saber is tuned on real Revit workflows, Autodesk documentation, and years of BIM professional expertise.',
+    title: 'Built for Revit',
+    body: 'Not a generic chatbot. RVT Saber is designed around Revit questions, with answers written as step-by-step ribbon and dialog walkthroughs.',
   },
   {
     icon: '⚡',
