@@ -2,10 +2,12 @@
 title: "How to change project units in Revit"
 description: "Set length, area, and volume units for a Revit project, choose rounding, and see how existing dimensions update."
 reviewed: true
-updated: 2026-11-26
+updated: 2026-11-27
 ---
 
 Project units control how Revit displays values such as dimensions, areas, and schedule quantities. Changing them doesn't change the stored sizes, only how they're shown.
+
+Check your BIM manager or project standards before you change units.
 
 ## 1. Open Project Units
 

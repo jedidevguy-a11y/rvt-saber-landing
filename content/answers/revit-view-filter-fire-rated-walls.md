@@ -2,7 +2,7 @@
 title: "How to color fire-rated walls with a view filter in Revit"
 description: "Create a view filter that colors every wall with a 2 HR fire rating in a plan view, without changing the model."
 reviewed: true
-updated: 2026-11-26
+updated: 2026-11-27
 ---
 
 A view filter colors or hides elements in one view based on their parameters. This example colors walls whose Fire Rating is 2 HR.

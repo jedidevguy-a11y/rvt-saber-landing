@@ -2,7 +2,7 @@
 title: "How to apply a view template to a view in Revit"
 description: "Assign a view template in the Properties palette so a view takes on its graphics, filters, and detail settings."
 reviewed: true
-updated: 2026-11-26
+updated: 2026-11-27
 ---
 
 A view template saves a set of view settings, such as visibility, graphics overrides, filters, and detail level, so you can apply them to many views at once.
@@ -23,6 +23,6 @@ Open **Visibility/Graphics** (type `VG`). The settings it controls now show the 
 
 ## Things to know
 
-- **Changing a template updates every view that uses it.** Make a copy before you change a shared template.
+- **Changing a template updates every view that uses it.** Make a copy before you change a shared template if you want to keep existing views with their previous settings.
 - **Overrides in a view are replaced.** Settings you changed directly in the view are replaced when you apply a template.
-- **Setting to None:** choose `<None>` in the same dialog to return the view to its own settings.
+- **Setting to None:** choose `<None>` in the same dialog to detach the template. The view keeps the settings it got from the template, and you can change them directly.

@@ -2,7 +2,7 @@
 title: "How to change the detail level of a view in Revit"
 description: "Switch a view between Coarse, Medium, and Fine detail, and understand what changes on screen and in the model."
 reviewed: true
-updated: 2026-11-26
+updated: 2026-11-27
 ---
 
 Detail level controls how much a view shows, such as cut patterns, edge lines, and some family detail. It applies to one view and doesn't change the model.
@@ -20,7 +20,7 @@ Use either method:
 
 ## 3. Check the result
 
-Compare the view before and after. Walls and floors show their cut patterns in Medium and Fine. Some families, such as doors and windows, show extra detail only at Fine.
+Compare the view before and after. Some elements, such as walls, show more layer and pattern detail at Medium and Fine. Some family types show extra detail only at Fine.
 
 ## Things to know
 

@@ -2,7 +2,7 @@
 title: "How to change a view's scale in Revit"
 description: "Set a view to a drawing scale such as 1/4 inch equals 1 foot, use a custom scale, and see how scale affects annotations."
 reviewed: true
-updated: 2026-11-26
+updated: 2026-11-27
 ---
 
 View scale sets how big the model appears on the printed sheet. Model elements keep their real size. Annotations such as text and tags are sized to print at the same height at any scale.
@@ -28,4 +28,4 @@ Model elements stay the same size. Text and tags keep their printed height. Chec
 
 - **Per view:** each view has its own scale. Set it in each view, or set it in a view template.
 - **Sheets:** a view placed on a sheet uses the scale set in the view, so set it before you finish the sheet layout.
-- **Annotation scale:** some text and dimensions may need to be resized after a scale change.
+- **Check annotations:** after a scale change, check text and tags, since some annotation families only look right at certain scales.
