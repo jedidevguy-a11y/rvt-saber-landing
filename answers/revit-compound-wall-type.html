@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to create a layered wall type in Revit (stud, drywall, and exterior insulation) | RVT Saber</title>
+  <meta name="description" content="Build a multi-layer wall type in Revit with a stud core, interior drywall, and exterior insulation, then check the layer order in a section view." />
+  <link rel="canonical" href="https://rvt-saber.app/answers/revit-compound-wall-type.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="How to create a layered wall type in Revit (stud, drywall, and exterior insulation)" />
+  <meta property="og:description" content="Build a multi-layer wall type in Revit with a stud core, interior drywall, and exterior insulation, then check the layer order in a section view." />
+  <meta property="og:url" content="https://rvt-saber.app/answers/revit-compound-wall-type.html" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <style>
+  *{box-sizing:border-box}
+  body{margin:0;background:#070B18;color:#E2E8F0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;line-height:1.7}
+  a{color:#00EEFF}
+  header,footer{padding:20px 24px;border-bottom:1px solid #2A3050}
+  footer{border-top:1px solid #2A3050;border-bottom:none;font-size:12px;color:#6B7280;margin-top:48px}
+  .wrap{max-width:760px;margin:0 auto;padding:32px 24px}
+  .brand{color:#00EEFF;font-weight:800;text-decoration:none;letter-spacing:.5px}
+  h1{font-size:2rem;line-height:1.25;margin:8px 0 12px;color:#fff}
+  h2{font-size:1.3rem;margin:32px 0 8px;color:#fff}
+  .meta{color:#9CA3AF;font-size:14px;margin-bottom:24px}
+  pre{background:#131825;border:1px solid #2A3050;border-radius:8px;padding:16px;overflow-x:auto;font-size:13px}
+  code{font-family:Consolas,monospace}
+  table{border-collapse:collapse;width:100%;margin:16px 0}
+  th,td{border:1px solid #2A3050;padding:8px;text-align:left;font-size:14px}
+  .cta{background:#1A1F35;border:1px solid #2A3050;border-radius:12px;padding:20px;margin-top:40px}
+  .list a{display:block;padding:14px 0;border-bottom:1px solid #2A3050;text-decoration:none}
+  .list p{margin:4px 0 0;color:#9CA3AF;font-size:14px}
+</style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"How to create a layered wall type in Revit (stud, drywall, and exterior insulation)","description":"Build a multi-layer wall type in Revit with a stud core, interior drywall, and exterior insulation, then check the layer order in a section view.","dateModified":"2026-11-26","url":"https://rvt-saber.app/answers/revit-compound-wall-type.html","publisher":{"@type":"Organization","name":"RVT Saber","url":"https://rvt-saber.app"}}</script>
+</head>
+<body>
+  <header><a class="brand" href="/">⚔ RVT Saber</a></header>
+  <main class="wrap">
+    <p class="meta"><a href="/answers/">All Revit answers</a> · Last reviewed 2026-11-26</p>
+    <h1>How to create a layered wall type in Revit (stud, drywall, and exterior insulation)</h1>
+    <p>This walks through building a wall type with three layers: exterior insulation, a 3.5 inch stud core, and 5/8 inch interior drywall. It&#39;s written for Revit&#39;s standard wall types. Work on a duplicate so the original type stays unchanged.</p>
+<h2>1. Duplicate a wall type</h2>
+<ol>
+<li>Select any wall in a plan or 3D view.</li>
+<li>In the <strong>Properties</strong> panel, click <strong>Edit Type</strong>.</li>
+<li>Click <strong>Duplicate</strong>, name the new type (for example, <code>Ext Wall - Stud 3.5 - Insul 1</code>), and click <strong>OK</strong>.</li>
+</ol>
+<h2>2. Open the layer structure</h2>
+<ol>
+<li>In the Type Properties dialog, under <strong>Construction</strong>, click <strong>Edit</strong> next to <strong>Structure</strong>.</li>
+<li>The layers are listed from the exterior side at the top to the interior side at the bottom.</li>
+</ol>
+<h2>3. Build the layers</h2>
+<p>Use the <strong>Insert</strong>, <strong>Delete</strong>, <strong>Move Up</strong>, and <strong>Move Down</strong> buttons to get the layers in this order:</p>
+<table>
+<thead>
+<tr>
+<th>Order (exterior to interior)</th>
+<th>Function</th>
+<th>Material</th>
+<th>Thickness</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>Finish 1 [Exterior]</td>
+<td>Insulation</td>
+<td>1&quot;</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Structure [Core Boundary]</td>
+<td>Wood framing (or your framing material)</td>
+<td>3-1/2&quot;</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Finish 2 [Interior]</td>
+<td>Gypsum wallboard</td>
+<td>5/8&quot;</td>
+</tr>
+</tbody></table>
+<p>To set a layer&#39;s function, click its <strong>Function</strong> cell and choose from the list. To set its material, click the <strong>Material</strong> cell and pick one from the Materials list, or create a new one.</p>
+<h2>4. Check the wrapping settings</h2>
+<p>The <strong>Wrapping</strong> section at the bottom of the dialog controls how layers wrap at openings and at the ends of the wall. It doesn&#39;t control exterior corners. Leave these at the defaults unless you have a specific detailing need.</p>
+<h2>5. Check the result in a section</h2>
+<ol>
+<li>Click <strong>OK</strong> to close the dialogs.</li>
+<li>Open a section through the wall, or create one from a plan.</li>
+<li>Confirm the insulation is on the exterior side and the drywall is on the interior side.</li>
+</ol>
+<h2>What this model does and doesn&#39;t show</h2>
+<p>Revit treats each layer as a full, continuous layer across the wall. It doesn&#39;t place individual studs. That&#39;s fine for documentation and quantity takeoffs, but it doesn&#39;t show stud spacing. If you need stud-by-stud framing in the model, use a detailed framing family or an add-in made for that purpose.</p>
+
+    <div class="cta">
+      <strong>Have a different Revit question?</strong>
+      <p>RVT Saber answers Revit, Dynamo, pyRevit, and family questions step by step. The apps are launching soon on iOS and Android.</p>
+      <p><a href="/#pricing">See plans</a></p>
+    </div></main>
+  <footer class="wrap">
+    <p>© 2026 RVT Saber. Not affiliated with Autodesk, Inc. Revit® is a registered trademark of Autodesk.</p>
+  </footer>
+</body>
+</html>

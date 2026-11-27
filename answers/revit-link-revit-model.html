@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to link another Revit model into your project | RVT Saber</title>
+  <meta name="description" content="Insert a Revit model as a link with Insert &gt; Link Revit, choose positioning, and reload or unload it later." />
+  <link rel="canonical" href="https://rvt-saber.app/answers/revit-link-revit-model.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="How to link another Revit model into your project" />
+  <meta property="og:description" content="Insert a Revit model as a link with Insert &gt; Link Revit, choose positioning, and reload or unload it later." />
+  <meta property="og:url" content="https://rvt-saber.app/answers/revit-link-revit-model.html" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <style>
+  *{box-sizing:border-box}
+  body{margin:0;background:#070B18;color:#E2E8F0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;line-height:1.7}
+  a{color:#00EEFF}
+  header,footer{padding:20px 24px;border-bottom:1px solid #2A3050}
+  footer{border-top:1px solid #2A3050;border-bottom:none;font-size:12px;color:#6B7280;margin-top:48px}
+  .wrap{max-width:760px;margin:0 auto;padding:32px 24px}
+  .brand{color:#00EEFF;font-weight:800;text-decoration:none;letter-spacing:.5px}
+  h1{font-size:2rem;line-height:1.25;margin:8px 0 12px;color:#fff}
+  h2{font-size:1.3rem;margin:32px 0 8px;color:#fff}
+  .meta{color:#9CA3AF;font-size:14px;margin-bottom:24px}
+  pre{background:#131825;border:1px solid #2A3050;border-radius:8px;padding:16px;overflow-x:auto;font-size:13px}
+  code{font-family:Consolas,monospace}
+  table{border-collapse:collapse;width:100%;margin:16px 0}
+  th,td{border:1px solid #2A3050;padding:8px;text-align:left;font-size:14px}
+  .cta{background:#1A1F35;border:1px solid #2A3050;border-radius:12px;padding:20px;margin-top:40px}
+  .list a{display:block;padding:14px 0;border-bottom:1px solid #2A3050;text-decoration:none}
+  .list p{margin:4px 0 0;color:#9CA3AF;font-size:14px}
+</style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"How to link another Revit model into your project","description":"Insert a Revit model as a link with Insert > Link Revit, choose positioning, and reload or unload it later.","dateModified":"2026-11-27","url":"https://rvt-saber.app/answers/revit-link-revit-model.html","publisher":{"@type":"Organization","name":"RVT Saber","url":"https://rvt-saber.app"}}</script>
+</head>
+<body>
+  <header><a class="brand" href="/">⚔ RVT Saber</a></header>
+  <main class="wrap">
+    <p class="meta"><a href="/answers/">All Revit answers</a> · Last reviewed 2026-11-27</p>
+    <h1>How to link another Revit model into your project</h1>
+    <p>A linked model is a separate Revit file that appears in your project for coordination. You can view and check it, but you can&#39;t edit its elements from your model.</p>
+<h2>1. Start the link</h2>
+<ol>
+<li>Go to the <strong>Insert</strong> tab.</li>
+<li>In the <strong>Link</strong> panel, click <strong>Link Revit</strong>.</li>
+</ol>
+<p>The <strong>Link Revit</strong> button is greyed out in sheet, schedule, drafting, and legend views. Switch to a plan, section, or 3D view first. You can also add a link from the Manage Links dialog.</p>
+<h2>2. Choose the file and positioning</h2>
+<ol>
+<li>Browse to the <code>.rvt</code> file and select it.</li>
+<li>Under <strong>Positioning</strong>, choose one of these:<ul>
+<li><strong>Auto - Origin to Origin:</strong> aligns the linked model&#39;s origin with your model&#39;s origin.</li>
+<li><strong>Auto - Center to Center:</strong> aligns the centers of the two models, useful when both are centered on the same spot.</li>
+<li><strong>Auto - By Shared Coordinates:</strong> uses the shared coordinate system of both models.</li>
+<li><strong>Manual - Origin</strong>, <strong>Manual - Base Point</strong>, or <strong>Manual - Center:</strong> lets you place the linked model by hand.</li>
+</ul>
+</li>
+<li>Click <strong>Open</strong>.</li>
+</ol>
+<h2>3. Check the link</h2>
+<ol>
+<li>Go to the <strong>Manage</strong> tab and click <strong>Manage Links</strong> in the <strong>Manage Project</strong> panel.</li>
+<li>Confirm the link shows as <strong>Loaded</strong> and check its path.</li>
+</ol>
+<h2>4. Update or remove the link later</h2>
+<ul>
+<li><strong>Reload:</strong> in <strong>Manage Links</strong>, click <strong>Reload</strong> to pull in the latest saved version of the linked file.</li>
+<li><strong>Unload:</strong> click <strong>Unload</strong> to hide the link without deleting it. Reload brings it back.</li>
+<li><strong>Remove:</strong> click <strong>Remove</strong> only if you no longer need the link.</li>
+</ul>
+<h2>Things to know</h2>
+<ul>
+<li><strong>File path:</strong> the linked file must stay in the path Revit saved. If it moves, use <strong>Reload From</strong> to point to the new location.</li>
+<li><strong>Coordination:</strong> positioning only places the model. Check that levels and grids line up after linking.</li>
+<li><strong>Read-only:</strong> you can&#39;t edit linked elements from the host model. Make changes in the linked file.</li>
+<li><strong>Workset:</strong> many workshared projects place links on a specific workset. Check your standards before you link. If you change the workset later, check both the instance and type workset of the link.</li>
+</ul>
+
+    <div class="cta">
+      <strong>Have a different Revit question?</strong>
+      <p>RVT Saber answers Revit, Dynamo, pyRevit, and family questions step by step. The apps are launching soon on iOS and Android.</p>
+      <p><a href="/#pricing">See plans</a></p>
+    </div></main>
+  <footer class="wrap">
+    <p>© 2026 RVT Saber. Not affiliated with Autodesk, Inc. Revit® is a registered trademark of Autodesk.</p>
+  </footer>
+</body>
+</html>

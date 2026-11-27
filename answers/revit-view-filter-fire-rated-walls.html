@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to color fire-rated walls with a view filter in Revit | RVT Saber</title>
+  <meta name="description" content="Create a view filter that colors every wall with a 2 HR fire rating in a plan view, without changing the model." />
+  <link rel="canonical" href="https://rvt-saber.app/answers/revit-view-filter-fire-rated-walls.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="How to color fire-rated walls with a view filter in Revit" />
+  <meta property="og:description" content="Create a view filter that colors every wall with a 2 HR fire rating in a plan view, without changing the model." />
+  <meta property="og:url" content="https://rvt-saber.app/answers/revit-view-filter-fire-rated-walls.html" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <style>
+  *{box-sizing:border-box}
+  body{margin:0;background:#070B18;color:#E2E8F0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;line-height:1.7}
+  a{color:#00EEFF}
+  header,footer{padding:20px 24px;border-bottom:1px solid #2A3050}
+  footer{border-top:1px solid #2A3050;border-bottom:none;font-size:12px;color:#6B7280;margin-top:48px}
+  .wrap{max-width:760px;margin:0 auto;padding:32px 24px}
+  .brand{color:#00EEFF;font-weight:800;text-decoration:none;letter-spacing:.5px}
+  h1{font-size:2rem;line-height:1.25;margin:8px 0 12px;color:#fff}
+  h2{font-size:1.3rem;margin:32px 0 8px;color:#fff}
+  .meta{color:#9CA3AF;font-size:14px;margin-bottom:24px}
+  pre{background:#131825;border:1px solid #2A3050;border-radius:8px;padding:16px;overflow-x:auto;font-size:13px}
+  code{font-family:Consolas,monospace}
+  table{border-collapse:collapse;width:100%;margin:16px 0}
+  th,td{border:1px solid #2A3050;padding:8px;text-align:left;font-size:14px}
+  .cta{background:#1A1F35;border:1px solid #2A3050;border-radius:12px;padding:20px;margin-top:40px}
+  .list a{display:block;padding:14px 0;border-bottom:1px solid #2A3050;text-decoration:none}
+  .list p{margin:4px 0 0;color:#9CA3AF;font-size:14px}
+</style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"How to color fire-rated walls with a view filter in Revit","description":"Create a view filter that colors every wall with a 2 HR fire rating in a plan view, without changing the model.","dateModified":"2026-11-27","url":"https://rvt-saber.app/answers/revit-view-filter-fire-rated-walls.html","publisher":{"@type":"Organization","name":"RVT Saber","url":"https://rvt-saber.app"}}</script>
+</head>
+<body>
+  <header><a class="brand" href="/">⚔ RVT Saber</a></header>
+  <main class="wrap">
+    <p class="meta"><a href="/answers/">All Revit answers</a> · Last reviewed 2026-11-27</p>
+    <h1>How to color fire-rated walls with a view filter in Revit</h1>
+    <p>A view filter colors or hides elements in one view based on their parameters. This example colors walls whose Fire Rating is 2 HR.</p>
+<h2>1. Open the view</h2>
+<p>Open the floor plan where you want the coloring.</p>
+<h2>2. Create the filter</h2>
+<ol>
+<li>Go to the <strong>View</strong> tab and click <strong>Filters</strong> in the <strong>Graphics</strong> panel.</li>
+<li>Click <strong>New</strong>, name the filter (for example <code>Fire Rated 2 HR</code>), and click <strong>OK</strong>.</li>
+<li>Under <strong>Categories</strong>, check <strong>Walls</strong>.</li>
+<li>Under <strong>Filter Rules</strong>, set <strong>Filter by</strong> to <strong>Fire Rating</strong>, <strong>Equals</strong>, and enter <strong>2 HR</strong>.</li>
+<li>Click <strong>OK</strong>.</li>
+</ol>
+<p>The rule value has to match how the walls store the rating. If your walls use a different format, such as <code>2HR</code>, enter it exactly as the walls show it.</p>
+<h2>3. Apply the filter to the view</h2>
+<ol>
+<li>Go to the <strong>View</strong> tab and click <strong>Visibility/Graphics</strong> (or type <code>VG</code>).</li>
+<li>Open the <strong>Filters</strong> tab, click <strong>Add</strong>, select <code>Fire Rated 2 HR</code>, and click <strong>OK</strong>.</li>
+<li>Click the <strong>Override</strong> button for the filter and set a <strong>Projection/Surface</strong> color, then click <strong>OK</strong>.</li>
+</ol>
+<h2>4. Check the result</h2>
+<p>Matching walls show the color in the view. Walls with other ratings, or with no rating, keep their normal look.</p>
+<h2>Things that can block it</h2>
+<ul>
+<li><strong>Blank Fire Rating:</strong> a wall with no value won&#39;t match the rule. Fill in the rating on the walls you expect to match.</li>
+<li><strong>Per view:</strong> the filter applies only to views where you added it. To use it in many views, add it to a view template.</li>
+</ul>
+
+    <div class="cta">
+      <strong>Have a different Revit question?</strong>
+      <p>RVT Saber answers Revit, Dynamo, pyRevit, and family questions step by step. The apps are launching soon on iOS and Android.</p>
+      <p><a href="/#pricing">See plans</a></p>
+    </div></main>
+  <footer class="wrap">
+    <p>© 2026 RVT Saber. Not affiliated with Autodesk, Inc. Revit® is a registered trademark of Autodesk.</p>
+  </footer>
+</body>
+</html>

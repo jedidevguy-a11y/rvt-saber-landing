@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to tag all rooms in a view in Revit | RVT Saber</title>
+  <meta name="description" content="Place room tags on every placed room in a plan view at once using Tag All, and only tag rooms that don't have a tag yet." />
+  <link rel="canonical" href="https://rvt-saber.app/answers/revit-tag-all-rooms.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="How to tag all rooms in a view in Revit" />
+  <meta property="og:description" content="Place room tags on every placed room in a plan view at once using Tag All, and only tag rooms that don't have a tag yet." />
+  <meta property="og:url" content="https://rvt-saber.app/answers/revit-tag-all-rooms.html" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <style>
+  *{box-sizing:border-box}
+  body{margin:0;background:#070B18;color:#E2E8F0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;line-height:1.7}
+  a{color:#00EEFF}
+  header,footer{padding:20px 24px;border-bottom:1px solid #2A3050}
+  footer{border-top:1px solid #2A3050;border-bottom:none;font-size:12px;color:#6B7280;margin-top:48px}
+  .wrap{max-width:760px;margin:0 auto;padding:32px 24px}
+  .brand{color:#00EEFF;font-weight:800;text-decoration:none;letter-spacing:.5px}
+  h1{font-size:2rem;line-height:1.25;margin:8px 0 12px;color:#fff}
+  h2{font-size:1.3rem;margin:32px 0 8px;color:#fff}
+  .meta{color:#9CA3AF;font-size:14px;margin-bottom:24px}
+  pre{background:#131825;border:1px solid #2A3050;border-radius:8px;padding:16px;overflow-x:auto;font-size:13px}
+  code{font-family:Consolas,monospace}
+  table{border-collapse:collapse;width:100%;margin:16px 0}
+  th,td{border:1px solid #2A3050;padding:8px;text-align:left;font-size:14px}
+  .cta{background:#1A1F35;border:1px solid #2A3050;border-radius:12px;padding:20px;margin-top:40px}
+  .list a{display:block;padding:14px 0;border-bottom:1px solid #2A3050;text-decoration:none}
+  .list p{margin:4px 0 0;color:#9CA3AF;font-size:14px}
+</style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"How to tag all rooms in a view in Revit","description":"Place room tags on every placed room in a plan view at once using Tag All, and only tag rooms that don't have a tag yet.","dateModified":"2026-11-27","url":"https://rvt-saber.app/answers/revit-tag-all-rooms.html","publisher":{"@type":"Organization","name":"RVT Saber","url":"https://rvt-saber.app"}}</script>
+</head>
+<body>
+  <header><a class="brand" href="/">⚔ RVT Saber</a></header>
+  <main class="wrap">
+    <p class="meta"><a href="/answers/">All Revit answers</a> · Last reviewed 2026-11-27</p>
+    <h1>How to tag all rooms in a view in Revit</h1>
+    <p>Use this when a plan has many rooms and you want a room tag on each one without placing them one at a time. Rooms must already be placed in the view.</p>
+<h2>1. Open the plan</h2>
+<p>Open a floor plan view that shows the rooms you want to tag.</p>
+<h2>2. Start Tag All</h2>
+<ol>
+<li>Go to the <strong>Annotate</strong> tab.</li>
+<li>In the <strong>Tag</strong> panel, click <strong>Tag All</strong>.</li>
+</ol>
+<h2>3. Choose the category and tag</h2>
+<ol>
+<li>In the dialog, check <strong>Rooms</strong> in the category list.</li>
+<li>In the loaded tags list, choose your room tag (for example <strong>Room Tag with Area</strong>).</li>
+<li>Check <strong>Leader</strong> only if you want leader lines.</li>
+<li>Click <strong>OK</strong>.</li>
+</ol>
+<p>Revit places a tag on each room in the view that doesn&#39;t have one yet.</p>
+<h2>4. Check the result</h2>
+<p>Look over the plan for tags that overlap. Drag a tag to move it. Tags follow their room if the room moves.</p>
+<h2>Things that can block it</h2>
+<ul>
+<li><strong>Unplaced rooms:</strong> a room has to be placed inside an enclosed area to get a tag. Unplaced rooms are not tagged.</li>
+<li><strong>Missing tag:</strong> if the room tag isn&#39;t in the list, go to the <strong>Insert</strong> tab, click <strong>Load Family</strong> in the <strong>Load from Library</strong> panel, load the tag, and run Tag All again.</li>
+<li><strong>Tags on other views:</strong> each view has its own tags. Tag each plan separately.</li>
+</ul>
+
+    <div class="cta">
+      <strong>Have a different Revit question?</strong>
+      <p>RVT Saber answers Revit, Dynamo, pyRevit, and family questions step by step. The apps are launching soon on iOS and Android.</p>
+      <p><a href="/#pricing">See plans</a></p>
+    </div></main>
+  <footer class="wrap">
+    <p>© 2026 RVT Saber. Not affiliated with Autodesk, Inc. Revit® is a registered trademark of Autodesk.</p>
+  </footer>
+</body>
+</html>

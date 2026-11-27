@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to purge unused families and types in Revit | RVT Saber</title>
+  <meta name="description" content="Use Purge Unused to remove families, types, and other items nothing in the model uses, and what to check before you purge." />
+  <link rel="canonical" href="https://rvt-saber.app/answers/revit-purge-unused.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="How to purge unused families and types in Revit" />
+  <meta property="og:description" content="Use Purge Unused to remove families, types, and other items nothing in the model uses, and what to check before you purge." />
+  <meta property="og:url" content="https://rvt-saber.app/answers/revit-purge-unused.html" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <style>
+  *{box-sizing:border-box}
+  body{margin:0;background:#070B18;color:#E2E8F0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;line-height:1.7}
+  a{color:#00EEFF}
+  header,footer{padding:20px 24px;border-bottom:1px solid #2A3050}
+  footer{border-top:1px solid #2A3050;border-bottom:none;font-size:12px;color:#6B7280;margin-top:48px}
+  .wrap{max-width:760px;margin:0 auto;padding:32px 24px}
+  .brand{color:#00EEFF;font-weight:800;text-decoration:none;letter-spacing:.5px}
+  h1{font-size:2rem;line-height:1.25;margin:8px 0 12px;color:#fff}
+  h2{font-size:1.3rem;margin:32px 0 8px;color:#fff}
+  .meta{color:#9CA3AF;font-size:14px;margin-bottom:24px}
+  pre{background:#131825;border:1px solid #2A3050;border-radius:8px;padding:16px;overflow-x:auto;font-size:13px}
+  code{font-family:Consolas,monospace}
+  table{border-collapse:collapse;width:100%;margin:16px 0}
+  th,td{border:1px solid #2A3050;padding:8px;text-align:left;font-size:14px}
+  .cta{background:#1A1F35;border:1px solid #2A3050;border-radius:12px;padding:20px;margin-top:40px}
+  .list a{display:block;padding:14px 0;border-bottom:1px solid #2A3050;text-decoration:none}
+  .list p{margin:4px 0 0;color:#9CA3AF;font-size:14px}
+</style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"How to purge unused families and types in Revit","description":"Use Purge Unused to remove families, types, and other items nothing in the model uses, and what to check before you purge.","dateModified":"2026-11-27","url":"https://rvt-saber.app/answers/revit-purge-unused.html","publisher":{"@type":"Organization","name":"RVT Saber","url":"https://rvt-saber.app"}}</script>
+</head>
+<body>
+  <header><a class="brand" href="/">⚔ RVT Saber</a></header>
+  <main class="wrap">
+    <p class="meta"><a href="/answers/">All Revit answers</a> · Last reviewed 2026-11-27</p>
+    <h1>How to purge unused families and types in Revit</h1>
+    <p>Purge Unused removes loaded families, types, and similar items that nothing in the model is using. It can reduce file size and clutter in the Project Browser. It doesn&#39;t delete anything placed in the model.</p>
+<h2>Before you start</h2>
+<p>Purged items aren&#39;t available until you load them again. To purge only certain items, click <strong>Check None</strong> in the dialog, then check just the items you want to remove. Purge can&#39;t be undone after you save.</p>
+<h2>1. Open Purge Unused</h2>
+<p>Go to the <strong>Manage</strong> tab and click <strong>Purge Unused</strong> in the <strong>Settings</strong> panel.</p>
+<h2>2. Review the list</h2>
+<p>The dialog lists unused items by category. Expand a category to see its items.</p>
+<ul>
+<li>Uncheck anything you want to keep, such as a title block or a family you&#39;re about to place.</li>
+<li>Leave checked anything you don&#39;t need.</li>
+</ul>
+<h2>3. Purge and repeat</h2>
+<ol>
+<li>Click <strong>OK</strong>.</li>
+<li>Run <strong>Purge Unused</strong> again. Removing one item may leave another one unused, so continue until the dialog is empty or shows only items you want to keep.</li>
+</ol>
+<h2>4. Save</h2>
+<p>Save the model. Compare the file size to your backup.</p>
+<h2>Things that can block it</h2>
+<ul>
+<li><strong>Items used in views, sheets, or schedules</strong> count as used, so they won&#39;t be purged.</li>
+<li><strong>Linked models</strong> aren&#39;t purged from the host model.</li>
+<li><strong>Worksharing:</strong> in a workshared model, you may need the right workset permissions. Check with your BIM manager before purging.</li>
+</ul>
+
+    <div class="cta">
+      <strong>Have a different Revit question?</strong>
+      <p>RVT Saber answers Revit, Dynamo, pyRevit, and family questions step by step. The apps are launching soon on iOS and Android.</p>
+      <p><a href="/#pricing">See plans</a></p>
+    </div></main>
+  <footer class="wrap">
+    <p>© 2026 RVT Saber. Not affiliated with Autodesk, Inc. Revit® is a registered trademark of Autodesk.</p>
+  </footer>
+</body>
+</html>

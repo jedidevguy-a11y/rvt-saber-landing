@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to rename all Revit rooms with the level name using pyRevit | RVT Saber</title>
+  <meta name="description" content="A pyRevit script that adds each room's level name to the front of its room name, with a guard against running it twice." />
+  <link rel="canonical" href="https://rvt-saber.app/answers/pyrevit-rename-rooms-by-level.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="How to rename all Revit rooms with the level name using pyRevit" />
+  <meta property="og:description" content="A pyRevit script that adds each room's level name to the front of its room name, with a guard against running it twice." />
+  <meta property="og:url" content="https://rvt-saber.app/answers/pyrevit-rename-rooms-by-level.html" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <style>
+  *{box-sizing:border-box}
+  body{margin:0;background:#070B18;color:#E2E8F0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;line-height:1.7}
+  a{color:#00EEFF}
+  header,footer{padding:20px 24px;border-bottom:1px solid #2A3050}
+  footer{border-top:1px solid #2A3050;border-bottom:none;font-size:12px;color:#6B7280;margin-top:48px}
+  .wrap{max-width:760px;margin:0 auto;padding:32px 24px}
+  .brand{color:#00EEFF;font-weight:800;text-decoration:none;letter-spacing:.5px}
+  h1{font-size:2rem;line-height:1.25;margin:8px 0 12px;color:#fff}
+  h2{font-size:1.3rem;margin:32px 0 8px;color:#fff}
+  .meta{color:#9CA3AF;font-size:14px;margin-bottom:24px}
+  pre{background:#131825;border:1px solid #2A3050;border-radius:8px;padding:16px;overflow-x:auto;font-size:13px}
+  code{font-family:Consolas,monospace}
+  table{border-collapse:collapse;width:100%;margin:16px 0}
+  th,td{border:1px solid #2A3050;padding:8px;text-align:left;font-size:14px}
+  .cta{background:#1A1F35;border:1px solid #2A3050;border-radius:12px;padding:20px;margin-top:40px}
+  .list a{display:block;padding:14px 0;border-bottom:1px solid #2A3050;text-decoration:none}
+  .list p{margin:4px 0 0;color:#9CA3AF;font-size:14px}
+</style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"How to rename all Revit rooms with the level name using pyRevit","description":"A pyRevit script that adds each room's level name to the front of its room name, with a guard against running it twice.","dateModified":"2026-11-26","url":"https://rvt-saber.app/answers/pyrevit-rename-rooms-by-level.html","publisher":{"@type":"Organization","name":"RVT Saber","url":"https://rvt-saber.app"}}</script>
+</head>
+<body>
+  <header><a class="brand" href="/">⚔ RVT Saber</a></header>
+  <main class="wrap">
+    <p class="meta"><a href="/answers/">All Revit answers</a> · Last reviewed 2026-11-26</p>
+    <h1>How to rename all Revit rooms with the level name using pyRevit</h1>
+    <p>This pyRevit script renames every placed room in the active model so each name starts with its level, for example <code>Level 1 - Office</code>. It skips unplaced rooms and rooms that already have the prefix, so running it twice won&#39;t double the names.</p>
+<h2>The script</h2>
+<p>Save this as <code>script.py</code>:</p>
+<pre><code class="language-python"># -*- coding: utf-8 -*-
+__title__ = &quot;Rename Rooms\nby Level&quot;
+__doc__ = &quot;Prepends the level name to every room name in the active model.&quot;
+
+from pyrevit import revit, DB, script
+import sys
+
+output = script.get_output()
+doc = revit.doc
+
+# Collect room instances (not the Room type definitions)
+rooms = DB.FilteredElementCollector(doc)\
+          .OfCategory(DB.BuiltInCategory.OST_Rooms)\
+          .WhereElementIsNotElementType()\
+          .ToElements()
+
+if not rooms:
+    output.print_md(&quot;**No rooms found in the model.**&quot;)
+    sys.exit()
+
+renamed = []
+skipped = []
+
+with revit.Transaction(&quot;Rename Rooms by Level&quot;):
+    for room in rooms:
+        # Unplaced rooms have no location, so skip them
+        if room.Location is None:
+            skipped.append(&quot;Unplaced room (ID {})&quot;.format(room.Id))
+            continue
+
+        level = doc.GetElement(room.LevelId)
+        name_param = room.get_Parameter(DB.BuiltInParameter.ROOM_NAME)
+        current_name = name_param.AsString()
+
+        if level is None:
+            skipped.append(&quot;&#39;{}&#39; has no level&quot;.format(current_name))
+            continue
+
+        # Don&#39;t add the prefix twice if the script runs again
+        if current_name.startswith(level.Name + &quot; - &quot;):
+            skipped.append(&quot;&#39;{}&#39; already has the prefix&quot;.format(current_name))
+            continue
+
+        new_name = &quot;{} - {}&quot;.format(level.Name, current_name)
+        name_param.Set(new_name)
+        renamed.append(&quot;{} → {}&quot;.format(current_name, new_name))
+
+output.print_md(&quot;## Renamed ({})&quot;.format(len(renamed)))
+for entry in renamed:
+    output.print_md(&quot;- &quot; + entry)
+
+if skipped:
+    output.print_md(&quot;## Skipped ({})&quot;.format(len(skipped)))
+    for entry in skipped:
+        output.print_md(&quot;- &quot; + entry)
+</code></pre>
+<h2>Install it as a pyRevit button</h2>
+<p>pyRevit finds buttons by folder name, so the structure has to match:</p>
+<pre><code>MyExtension.extension/
+└── MyTools.tab/
+    └── Rooms.panel/
+        └── RenameRooms.pushbutton/
+            └── script.py
+</code></pre>
+<p>Put the <code>MyExtension.extension</code> folder where pyRevit looks for extensions, then use <strong>pyRevit → Reload</strong> to load the new tab.</p>
+<h2>How it works</h2>
+<ul>
+<li><strong>Collecting rooms:</strong> <code>WhereElementIsNotElementType()</code> keeps room instances and leaves out the Room type definitions.</li>
+<li><strong>Unplaced rooms:</strong> an unplaced room has no location and no level, so the script skips it. Otherwise reading its level would fail.</li>
+<li><strong>Running it twice:</strong> the check for the existing prefix means a second run only reports what it skipped.</li>
+<li><strong>Transaction:</strong> <code>revit.Transaction</code> is pyRevit&#39;s wrapper around a Revit transaction. It commits the changes when the script finishes, and rolls them back if an error stops it.</li>
+</ul>
+<h2>Things that can block it</h2>
+<ul>
+<li><strong>Read-only parameter errors:</strong> rooms in a linked model can&#39;t be edited from the host model. Run the script in the model that owns the rooms.</li>
+<li><strong>Rooms in groups:</strong> group members may not accept parameter changes. Ungroup them first.</li>
+<li><strong>Worksharing:</strong> in a workshared model, rooms owned by another user can&#39;t be changed until that user releases them.</li>
+<li><strong>Phases:</strong> the collector returns rooms from every phase. If the project uses phases, add a filter for the phase you want before renaming.</li>
+</ul>
+
+    <div class="cta">
+      <strong>Have a different Revit question?</strong>
+      <p>RVT Saber answers Revit, Dynamo, pyRevit, and family questions step by step. The apps are launching soon on iOS and Android.</p>
+      <p><a href="/#pricing">See plans</a></p>
+    </div></main>
+  <footer class="wrap">
+    <p>© 2026 RVT Saber. Not affiliated with Autodesk, Inc. Revit® is a registered trademark of Autodesk.</p>
+  </footer>
+</body>
+</html>
