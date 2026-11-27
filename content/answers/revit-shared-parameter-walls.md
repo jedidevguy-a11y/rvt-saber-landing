@@ -8,7 +8,7 @@ updated: 2026-11-27
 A shared parameter is a field you define once in a text file, so you can reuse it in other projects and schedules. Revit has three kinds of parameters:
 
 - **Project parameters** exist only in the current project.
-- **Shared parameters** are defined in a shared parameter file and can be used across projects.
+- **Shared parameters** are defined in a shared parameter file and can be used across projects, tags and schedules.
 - **Family parameters** belong to a family and are set when the family is built or edited.
 
 This walks through adding a shared parameter to walls, but the steps work for any category. For more detail, search Revit Help (press F1) for project and shared parameters.
